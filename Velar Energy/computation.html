@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="css/velar.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Abhaya Libre', serif;
+            font-weight: lighter;
+        }
+    </style>
+    <title>VELAR ENERGY</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-light bg-white px-0">
+            <a class="navbar-brand"><img src="img/velar-logo.gif" alt="" width="100px"></a>
+            <div>
+                <!-- btn-warning styling -->
+                <a href="" class="btn btn-warning btn-lg  rounded-0">Go to website </a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 style="font-size: 65px; font-weight: bold;">
+                    Get your power <br>
+                    supply system <br>
+                    quotation
+                </h1>
+                <p class="mt-4">
+                    Our system will generate a product <br>
+                    quotation for you base on your loads and <br>
+                    consumption time. <br>
+
+                    <!-- text warnin styling -->
+                    <span class="text-warning">
+                        Enter the number of the appliances you have <br>
+                        to power in the next tab and click the estimate <br>
+                        button.
+                    </span>
+                </p>
+            </div>
+
+            <div class="col-md-6">
+                <div class="accordion" id="accordion">
+                    <div class="card rounded-0" >
+                        <div class="card-header  id=" headingOne">
+                            <!-- <h2 class="mb-0"> -->
+                            <button class="btn collapsed  btn-block rounded-0" type="button"
+                                data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne" >
+                                sample
+                            </button>
+                            <!-- </h2> -->
+                        </div>
+                        <div id="collapseOne" class="collapsed show" aria-labelledby="headingOne"
+                            data-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6 font-weight-bold">
+                                        Standing fan
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <input type="number" inputmode="numeric" id=""
+                                                class="form-control form-control-lg rounded-0"
+                                                placeholder="Standing fan" aria-describedby="helpId">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-3">
+                    <button type="button" onclick="addToEstimate()" data-toggle="modal" data-target="#power"
+                        class="btn btn-lg rounded-0 mb-5 text-white" style="background: #000; ">Compute Usage</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="modal fade" id="power" tabindex="-1" role="dialog" aria-labelledby="powerId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" style="min-width: 70% !important;" role="document">
+            <div class="modal-content" style="min-width: 70% !important;">
+                <div class="modal-header" style="background: #35B729; color: #fff;">
+                    <h5 class="modal-title">Power consumption estimate</h5>
+                    <button type="button" class="close" style="color: #fff; font-size:larger;" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row mt-3">
+                            <div class="col-md-5">
+                                <p>From the load information you provided, our system has the following result for your
+                                    power
+                                    utilization: </p>
+                                <table class="table table-borderless">
+                                    <tr>
+                                        <td class="font-weight-bold">Efficiency</td>
+                                        <td id="efficiency"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="font-weight-bold">Inverted kva</td>
+                                        <td id="kva"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="font-weight-bold">Power load</td>
+                                        <td id="load"></td>
+                                    </tr>
+                                </table>
+                                <p>
+                                    Provide us your hours of usage and contact information.
+                                    A price quote will be sent to your email and one of our representative will contact
+                                    to help complete
+                                    your order.
+                                </p>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" id="hrs" class="form-control form-control-lg rounded-0"
+                                        placeholder="Hours of usage" aria-describedby="helpId">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="name" class="form-control form-control-lg rounded-0"
+                                        placeholder="Full name" aria-describedby="helpId">
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" id="phone" inputmode="numeric" id=""
+                                        class="form-control form-control-lg rounded-0" placeholder="Phone number"
+                                        aria-describedby="helpId">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="email" inputmode="email"
+                                        class="form-control form-control-lg rounded-0" placeholder="Email Address"
+                                        aria-describedby="helpId">
+                                </div>
+                                <div class="form-group">
+                                    <textarea name="" id="usage" placeholder="Usage Address"
+                                        class="form-control form-control-lg rounded-0"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-primary btn-block rounded-0"
+                                            onclick="getbattery()">Get Quotation</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button type="button" class="btn btn-primary btn-block rounded-0" onclick="preview()">Preview
+                                            Quotation</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="display: none;"  id="qouter">
+        <div class="row">
+            
+            <nav class="navbar navbar- bg-white px-0">
+                    <ul style="list-style-type: none; ">
+                        <li id="username">Username</li>
+                        <li id="address">Address</li>
+                        <li id="useremail">Email</li>
+                        <li id="userphone">Phone</li>
+                    </ul>
+                
+
+                <div>
+                    <a class="navbar-brand"><img src="img/velar-logo.gif" alt="" width="100px"></a>
+                </div>
+            </nav>
+            
+      
+            <div class="col-12 mb-3">
+                <h3>Quotation</h3>
+            </div>
+            <div class="col-12 mb-5">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th> Date</th>
+                            <th>Qoute ID</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row" id="date"></td>
+                            <td id="qouteid"> </td>
+                            <td id="duedate"></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 mb-5">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Hours of Usage</th>
+                            <th scope="col">Kva</th>
+                            <th scope="col">Voltage</th>
+                            <th scope="col">Amp</th>
+                            <th scope="col">Solar Charge</th>
+                            <th scope="col">Battery Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row" id="hoursofuse"></td>
+                            <td id="userkva"> </td>
+                            <td id="volt"></td>
+                            <td id="amp"></td>
+                            <td id="solarcharge"></td>
+                            <td id= "batteryqty"></td>
+                        </tr>   
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 mb-2">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Items</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Total Without Solar</th>
+                            <th scope="col">Total With Solar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">Inverter Price</td>
+                            <td id="inverterprice"> </td>
+                            <td id=""></td>
+                            <td id=""></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Battery</td>
+                            <td id="batteryprice"> </td>
+                            <td id=""></td>
+                            <td id=""></td>
+                        </tr>
+                        <tr>
+                            <td scope="row" >No solar Price</td>
+                            <td id="nosolar"> </td>
+                            <td id=""></td>
+                            <td id=""></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Panel Price</td>
+                            <td id="panelprice"> </td>
+                            <td id=""></td>
+                            <td id=""></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Solar Price</td>
+                            <td id="solarprice"> </td>
+                            <td id=""></td>
+                            <td id=""></td>
+                        </tr>
+                        <tr>
+                            <td scope="row">Solar Store Price</td>
+                            <td id="solarstorepric"> </td>
+                            <td id=""></td>
+                            <td id=""></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"></td>
+                            <td ></td>
+                            <td id="twithsolar">8</td>
+                            <td id="twithoutsolar">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 mb-5">
+                <div class="mr-0">
+                    <a name="" id="" class="btn btn-primary rounded-0" href="#" role="button">Call us now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script src="js/computation.js"></script>
+</body>
+
+</html>

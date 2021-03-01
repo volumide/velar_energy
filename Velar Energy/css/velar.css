@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Abhaya+Libre&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Abhaya Libre', serif;;
+}
+option{
+    text-transform: capitalize;
+}
+div{
+    width: 350px;
+}
+input, button, select{
+    width: 100%;
+    padding: 7px 7px;
+    margin: 5px 0;
+}
